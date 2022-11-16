@@ -1,3 +1,9 @@
+## Why should you use GnuPG?
+
+Gnu Privacy Guard (GPG) is a complete and free implementation of the OpenPGP standard as defined by RFC4880 (also known as PGP).
+GnuPG is a tool you use to protect your privacy. 
+Your privacy is protected if you can correspond with others without eavesdroppers reading those messages.
+
 To encrypt email and files, you need to know how to work with PGP keys. 
 Get up to speed on generating, exporting, and importing encryption keys with GnuPG.
 
@@ -10,7 +16,9 @@ After all, without your PGP key, your contacts cannot send you encrypted email.
 ## Installation
 Out of the box, GnuPG should already be installed on your machine. If it’s not, you can install it with the command:
 
-% sudo apt-get install gnupg
+```
+sudo apt-get install gnupg
+```
 
 ### Generating your key pair 
 You must generate your key pair; this will create a private key and a public key.
@@ -19,7 +27,9 @@ The private key decrypts emails and files sent to you by those that have your pu
 The public key is the key you share with others so they may encrypt messages to you.
 To generate your key pair, we’ll work from the command line. Open a terminal window and issue the following command:
 
-% gpg –gen-key
+```
+gpg –gen-key
+```
 
 This fires up the process, and you’ll be asked a number of questions. The first bit of interactive output looks like this:
 
@@ -33,18 +43,22 @@ Please select what kind of key you want:
 (4) RSA (sign only)
 Your selection?
 
-Stick with the default here and press 1.
+Stick with the default here and press 
 
-% 1
+```
+1
+```
 
 Next, you must select the keysize:
 
 RSA keys may be between 1024 and 4096 bits long.
 What keysize do you want? (2048)
 
-Select the default (2048) by hitting Enter.
+Select the default (2048).
 
-% 2048
+```
+2048
+```
 
 The next question wants you to define how long the key should be valid. 
 You can select a value in days, weeks, months, or years, or you can configure the key to have no expiration date.
@@ -75,16 +89,26 @@ When GnuPG returns you to the command prompt, you’re ready to move on.
 In order for your keypair to be useful, you must make your public key available to others. 
 Export the public key, and then hand it over to those that need to send you encrypted mail or files. Export that key with the following command.
 
-% gpg –armor –export EMAIL_ADDRESS > public_key.asc (EMAIL_ADDRESS is the actual email address associated with the key)
-
+```
+gpg –armor –export EMAIL_ADDRESS > public_key.asc (EMAIL_ADDRESS is the actual email address associated with the key)
+```
+  
 You’ll have a public key file that you can distribute to those that need to encrypt email/files for your eyes only.
 You can also upload your public key to the keys.gnupg.net public key server so others can use it. 
 Follow these steps.
 
 Open a terminal window.
-% gpg –list-keys.
+  
+```
+gpg –list-keys.
+```
+  
 Search for the 8-digit string (the primary ID) associated with the key you want to export.
-& gpg –send-keys PRIMARY_ID (PRIMARY_ID is the actual ID of that key).
+
+```  
+gpg –send-keys PRIMARY_ID (PRIMARY_ID is the actual ID of that key).
+```
+  
 The key will be uploaded to the key server and be available to the public.
 
 Once the user has acquired your public key, he or she can import it into their system and then send you encrypted messages. 
@@ -97,5 +121,9 @@ Once you receive the user’s public key, save it and import it. The import proc
 
 Open a terminal window.
 Change into the directory housing the saved user key.
-% –import PUBLIC_KEY (PUBLIC_KEY is the filename of the public key to be imported).
+
+```
+–import PUBLIC_KEY (PUBLIC_KEY is the filename of the public key to be imported).
+```
+  
 Now you can send encrypted email/files to the user associated with the imported key.
