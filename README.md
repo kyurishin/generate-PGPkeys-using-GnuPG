@@ -148,7 +148,7 @@ Change into the directory housing the saved user key.
   
 Now you can send encrypted email/files to the user associated with the imported key.
   
-Source code: https://emailselfdefense.fsf.org/en/
+
   
   
 [Email Self-Defense](https://emailselfdefense.fsf.org/en/index.html)
