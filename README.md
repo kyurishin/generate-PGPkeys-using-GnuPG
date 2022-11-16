@@ -21,7 +21,7 @@ Encryption should be a priority for everyone including businesses. In case you n
 we’re starting from the ground up and showing how to create a PGP key so you can encrypt files and folders. 
 After all, without your PGP key, your contacts cannot send you encrypted email.
 
-Copyright © 2014-2021 Free Software Foundation, Inc. Privacy Policy. [Email Self-Defense](https://emailselfdefense.fsf.org/en/index.html)
+
 Too complicated? Read this [infographics](https://emailselfdefense.fsf.org/en/infographic.html)
 
 
@@ -149,3 +149,7 @@ Change into the directory housing the saved user key.
 Now you can send encrypted email/files to the user associated with the imported key.
   
 Source code: https://emailselfdefense.fsf.org/en/
+  
+  
+[Email Self-Defense](https://emailselfdefense.fsf.org/en/index.html)
+Copyright © 2014-2021 Free Software Foundation, Inc. Privacy Policy. 
