@@ -1,23 +1,43 @@
-## Why should you use GnuPG?
+## What are PGP and GnuPG?
 
-Gnu Privacy Guard (GPG) is a complete and free implementation of the OpenPGP standard as defined by RFC4880 (also known as PGP).
-GnuPG is a tool you use to protect your privacy. 
-Your privacy is protected if you can correspond with others without eavesdroppers reading those messages.
+PGP was originally created to protect files posted on Bulletin Board Systems (BBS) - a computerised messaging system that allowed users to post messages onto a public message board using a dial-up modem.
 
-To encrypt email and files, you need to know how to work with PGP keys. 
-Get up to speed on generating, exporting, and importing encryption keys with GnuPG.
+GnuPG is a **complete and free implementation of the OpenPGP standard** as defined by RFC4880 (also known as PGP). 
+GnuPG allows you to **encrypt and sign your data and communications;** it features a versatile key management system, along with access modules for all kinds of public key directories. 
+GnuPG, also known as GPG, is a **command line tool** with features for easy integration with other applications. 
 
-=====================================================================================================================
+A wealth of frontend applications and libraries are available e.g. Kleopatra. GnuPG also provides support for S/MIME and Secure Shell (ssh).
+
+Since its introduction in 1997, **GnuPG is Free Software** (meaning that it respects your freedom). 
+It can be freely used, modified and distributed under the terms of the GNU General Public License.
+
+
+> Arguing that you don't care about the right to privacy because you have nothing to hide is no different from saying you don't care about free speech  because you have nothing to say. – Edward Snowden
+
+
+### Why should you use GnuPG?
 
 Encryption should be a priority for everyone including businesses. In case you need an encryption basics refresher, 
 we’re starting from the ground up and showing how to create a PGP key so you can encrypt files and folders. 
 After all, without your PGP key, your contacts cannot send you encrypted email.
 
+Copyright © 2014-2021 Free Software Foundation, Inc. Privacy Policy. [Email Self-Defense](https://emailselfdefense.fsf.org/en/index.html)
+Too complicated? Read this [infographics](https://emailselfdefense.fsf.org/en/infographic.html)
+
+
+=========================================
+
+
 ## Installation
 Out of the box, GnuPG should already be installed on your machine. If it’s not, you can install it with the command:
 
+### Windows
+#### Get GnuPG by downloading [GPG4Win](https://www.gpg4win.org/)
+GPG4Win is an email and file encryption software package that includes GnuPG. Download and install the latest version, choosing default options whenever asked. After it's installed, you can close any windows that it creates.
+
+### Mac
 ```
-sudo apt-get install gnupg
+brew install gnupg gnupg2
 ```
 
 ### Generating your key pair 
@@ -43,7 +63,7 @@ Please select what kind of key you want:
 (4) RSA (sign only)
 Your selection?
 
-Stick with the default here and press 
+Stick with the default here and press 1.
 
 ```
 1
@@ -52,12 +72,12 @@ Stick with the default here and press
 Next, you must select the keysize:
 
 RSA keys may be between 1024 and 4096 bits long.
-What keysize do you want? (2048)
+What keysize do you want?
 
-Select the default (2048).
+Select the default (2048) or for a strong key (4096).
 
 ```
-2048
+4096
 ```
 
 The next question wants you to define how long the key should be valid. 
@@ -127,3 +147,5 @@ Change into the directory housing the saved user key.
 ```
   
 Now you can send encrypted email/files to the user associated with the imported key.
+  
+Source code: https://emailselfdefense.fsf.org/en/
